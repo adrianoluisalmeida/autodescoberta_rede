@@ -14,4 +14,6 @@ nmap
 *Banco de dados utilizado: sqlite (arquivo disponível em descoberta.dba)*   
 *Para executar, basta rodar o arquivo .sh (./teste.sh)*   
 
+Exemplo:
 
+![Imagem de exemplo (.png)](exemplo.png)
