@@ -1,7 +1,8 @@
 ### Autodescoberta da rede
 
-**Aluno:** Adriano Luis de Almeida
-**Disciplina: ** GERÊNCIA DE REDES "A" - UFSM/2018
+**Aluno:** Adriano Luis de Almeida   
+**Disciplina:** GERÊNCIA DE REDES "A" - UFSM/2018   
+**Disponível em:** https://github.com/adrianoluisalmeida/autodescoberta_rede    
 
 *Desenvolvido utilizando o SO Debian 9*   
 **Bibliotecas nescessárias:**   
