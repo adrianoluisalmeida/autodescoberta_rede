@@ -1,0 +1,51 @@
+DISCOVERY-MIB DEFINITIONS ::= BEGIN
+IMPORTS
+	IpAddress, Counter, OBJECT-TYPE FROM RFC1155-SMI
+	DisplayString FROM RFC1213-MIB
+	discovery FROM DISCOBERY-MIB;
+
+	discoveryObjects OBJECT IDENTIFIER ::= { discovery 6 }
+
+	doConsultationTime OBJECT-TYPE
+		SYNTAX Counter
+        	ACCESS read-write
+	        STATUS mandatory
+        	DESCRIPTION "Consultation time"
+        ::= { discoveryObjects 1 }
+
+	doFoundDevices OBJECT-TYPE
+		SYNTAX Counter
+		ACCESS read-only
+		STATUS mandatory
+		DESCRIPTION "Found devices"
+	::= { discoveryObjects 2 }
+
+	doNewFoundDevices OBJECT-TYPE
+		SYNTAX Counter
+		ACCESS read-only
+		STATUS mandatory
+		DESCRIPTION "New Devices Found"
+	::= { discoveryObjects 3 }
+
+	doDeviceAddress OBJECT-TYPE
+		SYNTAX IpAddress
+		ACCESS read-only
+		STATUS mandatory
+		DESCRIPTION "Endereço do dispositivo"
+	::= { discoveryObjects 4 }
+
+		doDeviceAddressMac OBJECT-TYPE
+			SYNTAX IpAddress
+			ACCESS read-only
+			STATUS mandatory
+			DESCRIPTION "MAC address of device"
+		::= { discoveryObjects 5 }
+
+		doDeviceAddressName OBJECT-TYPE
+			SYNTAX  DisplayString (SIZE (0..255))
+			ACCESS read-only
+			STATUS mandatory
+			DESCRIPTION "Network device name"
+		::= { discoveryObjects 6 }
+
+END
