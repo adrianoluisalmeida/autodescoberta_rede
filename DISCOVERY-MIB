@@ -1,0 +1,68 @@
+DISCOVERY-MIB DEFINITIONS ::= BEGIN
+IMPORTS
+	IpAddress, Counter, OBJECT-TYPE FROM RFC1155-SMI
+	DisplayString FROM RFC1213-MIB
+	mib-2 FROM SNMPv2-SMI;
+
+discoveryMib MODULE-IDENTITY
+     LAST-UPDATED "041219"
+     ORGANIZATION "RanieryCorp"
+     CONTACT-INFO
+        "clecio adriano e joel"
+ 
+     DESCRIPTION
+        "trabalho 3 de gerencia de computadores -ufsm 2019"
+ 
+     REVISION
+        "1.0"
+ 
+     DESCRIPTION
+        ""
+ 
+  ::= { mib-2 44523 }
+
+	discoveryObjects OBJECT IDENTIFIER ::= { discoveryMib 1 }
+
+	doConsultationTime OBJECT-TYPE
+		SYNTAX Counter
+        	ACCESS read-write
+	        STATUS mandatory
+        	DESCRIPTION "Consultation time"
+        ::= { discoveryObjects 1 }
+
+	doFoundDevices OBJECT-TYPE
+		SYNTAX Counter
+		ACCESS read-only
+		STATUS mandatory
+		DESCRIPTION "Found devices"
+	::= { discoveryObjects 2 }
+
+	doNewFoundDevices OBJECT-TYPE
+		SYNTAX Counter
+		ACCESS read-only
+		STATUS mandatory
+		DESCRIPTION "New Devices Found"
+	::= { discoveryObjects 3 }
+
+	doDeviceAddress OBJECT-TYPE
+		SYNTAX IpAddress
+		ACCESS read-only
+		STATUS mandatory
+		DESCRIPTION "Endereço do dispositivo"
+	::= { discoveryObjects 4 }
+
+		doDeviceAddressMac OBJECT-TYPE
+			SYNTAX IpAddress
+			ACCESS read-only
+			STATUS mandatory
+			DESCRIPTION "MAC address of device"
+		::= { discoveryObjects 5 }
+
+		doDeviceAddressName OBJECT-TYPE
+			SYNTAX  DisplayString (SIZE (0..255))
+			ACCESS read-only
+			STATUS mandatory
+			DESCRIPTION "Network device name"
+		::= { discoveryObjects 6 }
+
+END
